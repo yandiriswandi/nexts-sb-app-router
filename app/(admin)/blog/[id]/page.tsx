@@ -21,6 +21,8 @@ export default function BlogDetail() {
   //jadikan semua query ke dalam object
   const query = Object.fromEntries(search.entries())
   const user = search.get('user')
+  console.log(user)
+
   console.log(query.user, query.age)
 
   return (
