@@ -1,4 +1,5 @@
 import React from 'react'
+import CreateForm from './create'
 
 interface ListNotes {
   id: string
@@ -20,12 +21,14 @@ export default async function Notes() {
 
   return (
     <>
-      <div>
-        <ul>
-          {notes?.data?.map((el: ListNotes) => (
-            <li key={el.id}>{el.title}</li>
-          ))}
-        </ul>
+      <CreateForm />
+      <div className="grid grid-cols-4 gap-4">
+        {notes?.data?.map((el: ListNotes) => (
+          <div key={el.id} className="p-4 bg-white shadow-sm rounded-lg">
+            <h1>{el.title}</h1>
+            <p>{el.description}</p>
+          </div>
+        ))}
       </div>
     </>
   )
